@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Sen:400,700,800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Sen', sans-serif;
+
+    font-size: 18px;
+    line-height: 1.4rem;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+.shadow{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.container{
+    width: 1200px;
+    max-width: 95vw;
+    // padding-left: 10px;
+    // padding-right: 10px;
+     margin-left: auto;
+    margin-right: auto;
+}
+/*Menu*/
+header{
+    z-index: 10;
+    background: white;
+    line-height: 60px;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        .brand{
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+        ul{
+            display: flex;
+            li{
+                &:hover{
+                    background: #ddd;
+                }
+                a{
+                    display: block;
+                    height: 100%;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }   
+}
+.hide-on-small{
+    @media screen and(max-width:600px) {
+        display: none!important;
+    }
+}
+.hide-on-large{
+    @media screen and(min-width:600px) {
+        display: none!important;
+    }
+}
+
+.small-menu-btn{
+    cursor: pointer;
+    background: #ddd;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    svg{
+        transition: all ease-in-out .3s;
+        position: absolute;
+    }
+    
+}
+.active-menu-icon{
+    transform: translateY(200px);
+}
+.small-menu{
+    background: white;
+    transition: transform ease-in-out 0.3s;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    z-index: -1;
+    width: 300px;
+    height: calc(100vh - 60px);
+    ul{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            transition: letter-spacing ease-in-out .3s;
+            a{
+                display: flex;
+                width: 100vw;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            &:hover{
+                background: rgb(241, 241, 241);
+                letter-spacing: 3px;
+            }
+        }
+        
+    }
+    
+    
+}
+.small-menu-active{
+    transform: translateX(300px)!important;
+}
+main{
+    margin-top: 110px;
+}
